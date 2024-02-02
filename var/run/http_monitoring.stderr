@@ -1,0 +1,2 @@
+sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/mon/almonitoring/ingress/../var/run/http_monitoring.stdout' mode='w' encoding='UTF-8'>
+sys:1: ResourceWarning: unclosed file <_io.TextIOWrapper name='/home/mon/almonitoring/ingress/../var/run/http_monitoring.stderr' mode='w' encoding='UTF-8'>

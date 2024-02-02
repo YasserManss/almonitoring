@@ -7,7 +7,7 @@ elif [ "$1" == "start" ]; then
   cd "$(dirname "$0")"
   redis-server ../conf/redis.conf  --daemonize yes
 elif [ "$1" == "stop" ]; then
-  redis-cli shutdown
+  redis-cli -a 'redis' shutdown
 else
   echo "Usage: ./script.sh [start|stop]"
   echo "start: start redis as daemon"
