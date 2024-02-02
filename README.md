@@ -1,2 +1,3 @@
 # almonitoring
 New and Simple Solution to Monitor Anything. maybe...
+Python based and uses redis for storage.
