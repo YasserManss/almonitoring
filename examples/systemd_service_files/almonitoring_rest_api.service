@@ -1,0 +1,13 @@
+[Unit]
+Description=Gunicorn almonitoring rest_api
+After=network.target
+
+[Service]
+ExecStart=/home/mon/almonitoring/ingress/rest_api/bin/gunicorn_start.sh
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

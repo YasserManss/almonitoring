@@ -1,0 +1,14 @@
+[Unit]
+Description=Gunicorn almonitoring nginx
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/opt/platform/nginx/sbin/nginx -c /home/mon/almonitoring/ingress/rest_api/conf/nginx.conf
+ExecReload=/bin/kill -s HUP $MAINPID
+KillMode=mixed
+TimeoutStopSec=5
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
