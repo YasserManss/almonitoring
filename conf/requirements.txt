@@ -2,3 +2,4 @@ python-daemon
 uvicorn[standard]
 fastapi
 gunicorn
+redis
