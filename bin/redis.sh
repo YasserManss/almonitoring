@@ -8,8 +8,11 @@ elif [ "$1" == "start" ]; then
   redis-server ../conf/redis.conf  --daemonize yes
 elif [ "$1" == "stop" ]; then
   redis-cli -a 'redis' shutdown
+elif [ "$1" == "flush" ]; then
+  redis-cli -a 'redis' flushall
 else
   echo "Usage: ./script.sh [start|stop]"
   echo "start: start redis as daemon"
   echo "stop: stop redis"
+  echo "flush: flush redis data"
 fi

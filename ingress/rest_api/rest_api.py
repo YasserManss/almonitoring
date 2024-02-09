@@ -49,10 +49,10 @@ async def create_item(credentials: Annotated[HTTPBasicCredentials, Depends(secur
         if isinstance(alert, Alert):
             alert = [alert]
         for a in alert:
-            default_key = 'nokey'
-            if 'key' not in a:
-                key = default_key
-            r.incr(a.key, 1)
-            serial = r.get(a.key)
-            r.hmset(a.key+':'+serial.decode(), a.alert)
+            key = 'nokey'
+            if 'key' in a:
+                key = a.key
+            r.incr(key, 1)
+            serial = r.get(key)
+            r.hmset(key+':'+serial.decode(), a.alert)
         return {"message": "Success"}

@@ -1,0 +1,12 @@
+[Unit]
+Description=System Logging Service
+Wants=network.target network-online.target
+After=network.target network-online.target
+
+[Service]
+Type=notify
+EnvironmentFile=-/etc/sysconfig/rsyslog
+ExecStart=/opt/platform/rsyslog/sbin/rsyslogd -f /home/mon/almonitoring/ingress/syslog/conf/rsyslogd.conf -i /home/mon/almonitoring/ingress/syslog/var/tmp/syslog.pid
+
+[Install]
+WantedBy=multi-user.target
